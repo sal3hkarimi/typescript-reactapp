@@ -376,15 +376,22 @@ let func: FuncInterface = (a, b) => {
 console.log(func(25, 3));
 
 /* Episode 23 indexing in (interface or type optional) */
-console.log('-------------------------------------------------');
 
-interface INFO{
-    [index: string]:string
+interface INFO {
+    [index: string]: string
 }
 
-let e1: INFO={
+let e1: INFO = {
     name: 'ali',
     lastName: 'Karimi',
     age: '23'
 }
 
+
+/* Episode 24 Generics */
+console.log('-------------------------------------------------');
+
+const arrayAny: any[] = ['str', 123, true]
+const arrayGen: Array<any> = ['str', 3435, false, { name: 'azim', lastname: 'karimi' }]
+console.log(arrayAny);
+console.log(arrayGen);

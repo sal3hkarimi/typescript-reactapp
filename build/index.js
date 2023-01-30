@@ -239,10 +239,14 @@ let func = (a, b) => {
     return a + b;
 };
 console.log(func(25, 3));
-/* Episode 23 indexing in (interface or type optional) */
-console.log('-------------------------------------------------');
 let e1 = {
     name: 'ali',
     lastName: 'Karimi',
     age: '23'
 };
+/* Episode 24 Generics */
+console.log('-------------------------------------------------');
+const arrayAny = ['str', 123, true];
+const arrayGen = ['str', 3435, false, { name: 'azim', lastname: 'karimi' }];
+console.log(arrayAny);
+console.log(arrayGen);
