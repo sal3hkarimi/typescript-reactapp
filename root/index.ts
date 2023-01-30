@@ -151,5 +151,42 @@ if (typeof unknownType === 'string') {
     console.log(dataStr);
 }
 
+/* Episode 15 class */
+
+class User {
+    firstName: string;
+    userGender: string;
+    userAge: number;
+    constructor(name: string, gen: string, age: number) {
+        this.firstName = name
+        this.userGender = gen
+        this.userAge = age
+    }
+
+    gender() {
+        console.log('user gender: ' + this.userGender);
+    }
+
+    age() {
+        console.log(`${this.firstName} is ${this.userAge}`);
+
+    }
+}
+
+const ur = new User('Sadeq', 'Male', 24)
+console.log(ur); // { firstName: "Sadeq", userGender: "Male", userAge: 24 }
+
+
+const negar = {
+    firstName: 'Negar',
+    userGender: 'Famale',
+    userAge: 26,
+    gender: ur.gender,
+    age: ur.age
+}
+negar.gender() // user gender: Famale
+negar.age() // Negar is 26
+
+
 
 /**/
