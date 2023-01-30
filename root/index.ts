@@ -326,12 +326,11 @@ ab.printValue()
 
 
 /* Episode 21 interface class */
-console.log('-------------------------------------------------');
 
 interface CourseJs {
-    title?: string,
-    description: string,
-    price: number
+    title?: string;
+    description: string;
+    price: number;
 
 }
 
@@ -359,3 +358,20 @@ class Courses implements CourseJs, Print {
 
 const crsJs = new Courses('javascript', 'superset for js', 256)
 crsJs.printInfo()
+/* Episode 22 readonly option and interface as function */
+console.log('-------------------------------------------------');
+
+interface FuncInterface {
+    // readonly firstNumber: number;
+    // secondNumber: number
+    (firstNumber: number, secondNumber: number): number
+}
+
+// let numbers: FuncInterface = { firstNumber: 25, secondNumber: 4 }
+// numbers.firstName = 89;
+
+
+let func: FuncInterface = (a, b) => {
+    return a + b
+}
+console.log(func(25, 3));

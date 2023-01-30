@@ -221,8 +221,6 @@ class AbsChidlClass extends AbsClass {
 }
 const ab = new AbsChidlClass();
 ab.printValue();
-/* Episode 21 interface class */
-console.log('-------------------------------------------------');
 class Courses {
     constructor(title, desc, price) {
         this.title = title;
@@ -235,3 +233,11 @@ class Courses {
 }
 const crsJs = new Courses('javascript', 'superset for js', 256);
 crsJs.printInfo();
+/* Episode 22 readonly option and interface as function */
+console.log('-------------------------------------------------');
+// let numbers: FuncInterface = { firstNumber: 25, secondNumber: 4 }
+// numbers.firstName = 89;
+let func = (a, b) => {
+    return a + b;
+};
+console.log(func(25, 3));
