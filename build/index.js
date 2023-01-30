@@ -142,7 +142,6 @@ prCourse.printCourse();
 crs.price = 256;
 prCourse.printCourse();
 /* Episode 17 readonly and static */
-console.log('-------------------------------------------------');
 class News {
     constructor(news, des) {
         News.title = news;
@@ -157,4 +156,35 @@ const bbc = new News('corona virus', 'this virus find in 2021');
 bbc.printNews();
 News.title = 'Vaba';
 bbc.printNews();
+/* Episode 18 Inheritance and shorthand for class property */
+console.log('-------------------------------------------------');
+class Profile {
+    // public name: string;
+    // public age: number;
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    printResult() {
+        console.log(`my name is ${this.name}, I'm ${this.age} years old`);
+    }
+}
+class Favorite extends Profile {
+    constructor(name, age, fav) {
+        super(name, age);
+        this.name = name;
+        this.age = age;
+        this.fav = fav;
+    }
+    addFavorite(text) {
+        this.fav.push(text);
+    }
+    printFavorite() {
+        super.printResult();
+        console.log(this.fav);
+    }
+}
+const fav = new Favorite('Ali', 25, []);
+fav.addFavorite('sports');
+fav.printFavorite();
 /**/ 
