@@ -10,4 +10,10 @@ function sum(firstNum, secondNum, flag) {
     }
 }
 const sumNumber = sum(12, 32, true);
+/*
 console.log(sumNumber); // 44
+*/
+const person = {
+    name: 'Mohammad',
+    age: 24
+};
