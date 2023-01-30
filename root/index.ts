@@ -137,4 +137,19 @@ addCallBack(10, 50, (res) => {
     console.log(res);
 })
 
+/* Episode 13 unknown type */
+
+let unknownType: unknown;
+let dataStr: string;
+
+unknownType = 12;
+unknownType = true;
+unknownType = "ali"
+
+if (typeof unknownType === 'string') {
+    dataStr = unknownType
+    console.log(dataStr);
+}
+
+
 /**/
