@@ -73,4 +73,19 @@ let f = (num1, num2) => {
     return num1 + num2;
 };
 console.log(`f: ${f(23, 6)}`); // f: 29
+/* Episode 12 function type : void and callback */
+let Add = (a, b) => {
+    return a + b;
+};
+let Print = (n) => {
+    console.log(n);
+};
+Print(Add(2, 34));
+let addCallBack = (a, b, ab) => {
+    const result = a + b;
+    ab(result);
+};
+addCallBack(10, 50, (res) => {
+    console.log(res);
+});
 /**/ 

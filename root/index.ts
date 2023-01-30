@@ -109,11 +109,32 @@ const w3: WAliases = false
 
 type func = (firstNum: number, secondNum: number) => number;
 
-let f:func = (num1, num2) => {
+let f: func = (num1, num2) => {
     return num1 + num2
 }
 console.log(`f: ${f(23, 6)}`); // f: 29
 
 
+/* Episode 12 function type : void and callback */
+
+let Add: (a: number, b: number) => number = (a, b) => {
+    return a + b
+}
+
+let Print: (res: number) => void = (n) => {
+    console.log(n);
+}
+Print(Add(2, 34))
+
+type callback = (a: number, b: number, ab: (num: number) => void) => void;
+
+let addCallBack: callback = (a, b, ab) => {
+    const result = a + b;
+    ab(result);
+}
+
+addCallBack(10, 50, (res) => {
+    console.log(res);
+})
 
 /**/
