@@ -31,3 +31,7 @@ const person: {
     }
 }
 
+
+let listStr: string[] = ['a', 'b', 'c']
+let listStrOrNum: (string | number)[] = ['string', 23]
+let listAny: any[] = ['str', 123, true]
