@@ -188,5 +188,37 @@ negar.gender() // user gender: Famale
 negar.age() // Negar is 26
 
 
+/* Episode 16 encapsulation */
+
+console.log('-------------------------------------------------');
+
+class Course {
+    protected title: string;
+    public description: string;
+    price: number;
+    constructor(title: string, description: string, price: number,) {
+        this.title = title;
+        this.description = description;
+        this.price = price;
+    }
+
+
+}
+
+class PrintCourse extends Course {
+    printCourse() {
+        console.log(`course: ${this.title}, description:${this.description}, price: ${this.price}`);
+    }
+}
+
+
+const crs = new Course('TypeScript', 'this is a new course', 3205)
+const prCourse = new PrintCourse('ts', 'this is ts', 25)
+
+prCourse.printCourse()
+
+crs.price = 256
+prCourse.printCourse()
+
 
 /**/
