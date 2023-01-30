@@ -60,4 +60,17 @@ if (prs.gender === Personal.MALE) {
 else {
     console.log('she is Female');
 }
+/* Lesson 10 */
+const nullType = null;
+const undefinedType = undefined;
+const unionType = 'str';
+const userName = "Montazer"; // -> literal type
+const userNames = "Mohammad"; // literal and union
+const w1 = 23;
+const w2 = 'str';
+const w3 = false;
+let f = (num1, num2) => {
+    return num1 + num2;
+};
+console.log(`f: ${f(23, 6)}`); // f: 29
 /**/ 

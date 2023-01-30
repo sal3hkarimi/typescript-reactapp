@@ -85,11 +85,34 @@ const prs: {
     gender: Personal.MALE
 }
 
-if(prs.gender === Personal.MALE){
-    console.log('he is Male');    
-}else{
+if (prs.gender === Personal.MALE) {
+    console.log('he is Male');
+} else {
     console.log('she is Female');
 }
+
+
+/* Lesson 10 */
+
+const nullType: null = null;
+const undefinedType: undefined = undefined;
+const unionType: undefined | null | string = 'str'
+const userName: "Montazer" = "Montazer" // -> literal type
+const userNames: "Mohammad" | "Vahid" | "Qasem" | "Ali" | "Fattah" = "Mohammad"; // literal and union
+
+/* Lesson 11 Aliases */
+type WAliases = string | number | boolean;
+
+const w1: WAliases = 23
+const w2: WAliases = 'str'
+const w3: WAliases = false
+
+type func = (firstNum: number, secondNum: number) => number;
+
+let f:func = (num1, num2) => {
+    return num1 + num2
+}
+console.log(`f: ${f(23, 6)}`); // f: 29
 
 
 
