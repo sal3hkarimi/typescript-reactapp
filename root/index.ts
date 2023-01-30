@@ -17,8 +17,17 @@ console.log(sumNumber); // 44
 
 const person: {
     name: string;
-    age: Number
+    age: Number;
+    x: {
+        y: string;
+        z: boolean
+    }
 } = {
     name: 'Mohammad',
-    age: 24
+    age: 24,
+    x: {
+        y: 'y',
+        z: false
+    }
 }
+
