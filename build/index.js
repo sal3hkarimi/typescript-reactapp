@@ -43,4 +43,21 @@ valueDefaultAny = 123;
 let valueDefAny;
 valueDefAny = 'str';
 valueDefAny = 123;
+var Personal;
+(function (Personal) {
+    Personal["NAME"] = "Mostafa";
+    Personal[Personal["MALE"] = 0] = "MALE";
+    Personal[Personal["FEMALE"] = 1] = "FEMALE";
+})(Personal || (Personal = {}));
+const prs = {
+    name: Personal.NAME,
+    age: 24,
+    gender: Personal.MALE
+};
+if (prs.gender === Personal.MALE) {
+    console.log('he is Male');
+}
+else {
+    console.log('she is Female');
+}
 /**/ 

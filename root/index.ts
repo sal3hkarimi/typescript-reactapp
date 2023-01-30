@@ -67,4 +67,30 @@ valueDefAny = 'str'
 valueDefAny = 123
 
 
+
+enum Personal {
+    NAME = "Mostafa",
+    MALE = 0,
+    FEMALE = 1
+}
+
+
+const prs: {
+    name: Personal;
+    age: number;
+    gender: Personal
+} = {
+    name: Personal.NAME,
+    age: 24,
+    gender: Personal.MALE
+}
+
+if(prs.gender === Personal.MALE){
+    console.log('he is Male');    
+}else{
+    console.log('she is Female');
+}
+
+
+
 /**/
