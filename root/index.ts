@@ -190,7 +190,6 @@ negar.age() // Negar is 26
 
 /* Episode 16 encapsulation */
 
-console.log('-------------------------------------------------');
 
 class Course {
     protected title: string;
@@ -220,5 +219,27 @@ prCourse.printCourse()
 crs.price = 256
 prCourse.printCourse()
 
+/* Episode 17 readonly and static */
+console.log('-------------------------------------------------');
+
+class News {
+    static title: string;
+    description: string;
+    constructor(news: string, des: string) {
+        News.title = news
+        this.description = des
+    }
+    printNews() {
+        console.log(News.title);
+        console.log(this.description);
+
+    }
+}
+
+const bbc = new News('corona virus', 'this virus find in 2021')
+bbc.printNews()
+
+News.title = 'Vaba'
+bbc.printNews()
 
 /**/
