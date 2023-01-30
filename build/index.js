@@ -157,7 +157,6 @@ bbc.printNews();
 News.title = 'Vaba';
 bbc.printNews();
 /* Episode 18 Inheritance and shorthand for class property */
-console.log('-------------------------------------------------');
 class Profile {
     // public name: string;
     // public age: number;
@@ -187,4 +186,39 @@ class Favorite extends Profile {
 const fav = new Favorite('Ali', 25, []);
 fav.addFavorite('sports');
 fav.printFavorite();
-/**/ 
+/* Episode 19 getter and setter */
+class GetAndSet {
+    constructor(number) {
+        this.number = number;
+    }
+    get getNumber() {
+        return this.number;
+    }
+    set setNumber(num) {
+        this.number = num;
+    }
+}
+class PrintValue extends GetAndSet {
+    printValue() {
+        console.log(this.getNumber);
+    }
+}
+const logValue = new PrintValue(102);
+logValue.printValue();
+logValue.setNumber = 125;
+logValue.printValue();
+/* Episode 20 abstract class */
+console.log('-------------------------------------------------');
+class AbsClass {
+    constructor() { }
+    printValue() {
+        console.log(this.setValue());
+    }
+}
+class AbsChidlClass extends AbsClass {
+    setValue() {
+        return 'Ali';
+    }
+}
+const ab = new AbsChidlClass();
+ab.printValue();
