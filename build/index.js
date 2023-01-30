@@ -208,7 +208,6 @@ logValue.printValue();
 logValue.setNumber = 125;
 logValue.printValue();
 /* Episode 20 abstract class */
-console.log('-------------------------------------------------');
 class AbsClass {
     constructor() { }
     printValue() {
@@ -222,3 +221,17 @@ class AbsChidlClass extends AbsClass {
 }
 const ab = new AbsChidlClass();
 ab.printValue();
+/* Episode 21 interface class */
+console.log('-------------------------------------------------');
+class Courses {
+    constructor(title, desc, price) {
+        this.title = title;
+        this.description = desc;
+        this.price = price;
+    }
+    printInfo() {
+        console.log(`title: ${this.title} and price: ${this.price}`);
+    }
+}
+const crsJs = new Courses('javascript', 'superset for js', 256);
+crsJs.printInfo();

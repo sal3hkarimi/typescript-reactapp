@@ -303,7 +303,6 @@ logValue.printValue()
 
 
 /* Episode 20 abstract class */
-console.log('-------------------------------------------------');
 
 abstract class AbsClass {
     constructor() { }
@@ -324,3 +323,39 @@ class AbsChidlClass extends AbsClass {
 const ab = new AbsChidlClass()
 
 ab.printValue()
+
+
+/* Episode 21 interface class */
+console.log('-------------------------------------------------');
+
+interface CourseJs {
+    title?: string,
+    description: string,
+    price: number
+
+}
+
+interface Print {
+    printInfo(): void
+}
+
+class Courses implements CourseJs, Print {
+    title: string;
+    description: string;
+    price: number;
+
+    constructor(title: string, desc: string, price: number) {
+        this.title = title
+        this.description = desc;
+        this.price = price
+    }
+
+    printInfo() {
+        console.log(`title: ${this.title} and price: ${this.price}`);
+
+    }
+}
+
+
+const crsJs = new Courses('javascript', 'superset for js', 256)
+crsJs.printInfo()
