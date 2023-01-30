@@ -24,3 +24,4 @@ const person = {
 let listStr = ['a', 'b', 'c'];
 let listStrOrNum = ['string', 23];
 let listAny = ['str', 123, true];
+let listOtherDefind = ['str', 23, 'abcd', 'efg'];
