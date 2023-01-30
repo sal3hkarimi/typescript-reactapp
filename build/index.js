@@ -37,4 +37,10 @@ listTuple[0] = 'NewStr';
 /*
 console.log(listTuple); // [ "newStr", 2, false, { name: "Ahmad", age: 45 }, "Qasem" ]
 */
+let valueDefaultAny; // --> type = any
+valueDefaultAny = 'str';
+valueDefaultAny = 123;
+let valueDefAny;
+valueDefAny = 'str';
+valueDefAny = 123;
 /**/ 
