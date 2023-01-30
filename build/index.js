@@ -6,7 +6,7 @@ const str = 'string';
 const bool = false;
 function sum(firstNum, secondNum, flag) {
     if (flag) {
-        console.log(`result: ${firstNum + secondNum}`);
+        return `result: ${firstNum + secondNum}`;
     }
 }
 const sumNumber = sum(12, 32, true);
@@ -25,3 +25,16 @@ let listStr = ['a', 'b', 'c'];
 let listStrOrNum = ['string', 23];
 let listAny = ['str', 123, true];
 let listOtherDefind = ['str', 23, 'abcd', 'efg'];
+const listTuple = ['string', 2, false, {
+        name: 'Ahmad',
+        age: 45
+    }];
+listTuple.push('Qasem');
+/*
+console.log(listTuple); // [ "string", 2, false, { name: "Ahmad", age: 45 }, "Qasem" ]
+*/
+listTuple[0] = 'NewStr';
+/*
+console.log(listTuple); // [ "newStr", 2, false, { name: "Ahmad", age: 45 }, "Qasem" ]
+*/
+/**/ 
