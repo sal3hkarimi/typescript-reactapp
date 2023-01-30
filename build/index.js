@@ -233,11 +233,16 @@ class Courses {
 }
 const crsJs = new Courses('javascript', 'superset for js', 256);
 crsJs.printInfo();
-/* Episode 22 readonly option and interface as function */
-console.log('-------------------------------------------------');
 // let numbers: FuncInterface = { firstNumber: 25, secondNumber: 4 }
 // numbers.firstName = 89;
 let func = (a, b) => {
     return a + b;
 };
 console.log(func(25, 3));
+/* Episode 23 indexing in (interface or type optional) */
+console.log('-------------------------------------------------');
+let e1 = {
+    name: 'ali',
+    lastName: 'Karimi',
+    age: '23'
+};

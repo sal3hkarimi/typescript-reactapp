@@ -359,7 +359,6 @@ class Courses implements CourseJs, Print {
 const crsJs = new Courses('javascript', 'superset for js', 256)
 crsJs.printInfo()
 /* Episode 22 readonly option and interface as function */
-console.log('-------------------------------------------------');
 
 interface FuncInterface {
     // readonly firstNumber: number;
@@ -375,3 +374,17 @@ let func: FuncInterface = (a, b) => {
     return a + b
 }
 console.log(func(25, 3));
+
+/* Episode 23 indexing in (interface or type optional) */
+console.log('-------------------------------------------------');
+
+interface INFO{
+    [index: string]:string
+}
+
+let e1: INFO={
+    name: 'ali',
+    lastName: 'Karimi',
+    age: '23'
+}
+
