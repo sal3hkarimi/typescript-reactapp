@@ -405,4 +405,4 @@ function fullname<T>(fn: T[]): T[] {
     return fn
 }
 
-console.log(fullname(['45435']));
+console.log(fullname<string>(['45435']));
