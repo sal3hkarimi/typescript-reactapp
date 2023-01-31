@@ -409,7 +409,6 @@ console.log(fun<string>(['45435']));
 
 
 /* Episode 26 Generics in functions 2 */
-console.log('-------------------------------------------------');
 
 
 // function fullname(fn: object, ln: object) {
@@ -428,3 +427,13 @@ console.log(fl);
 console.log(fl2);
 console.log(fl3);
 
+/* Episode 27 Constraints in Generics */
+console.log('-------------------------------------------------');
+
+function product<N extends object, P extends number | string>(name: N, price: P) {
+    return Object.assign({}, name, price)
+}
+
+// <{ name: string }, number | string[]>
+const pen = product({ name: 'pen' }, 5454)
+console.log(pen);
