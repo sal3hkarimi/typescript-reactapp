@@ -245,8 +245,13 @@ let e1 = {
     age: '23'
 };
 /* Episode 24 Generics */
-console.log('-------------------------------------------------');
 const arrayAny = ['str', 123, true];
 const arrayGen = ['str', 3435, false, { name: 'azim', lastname: 'karimi' }];
 console.log(arrayAny);
 console.log(arrayGen);
+/* Episode 25 Generics in functions */
+console.log('-------------------------------------------------');
+function fullname(fn) {
+    return fn;
+}
+console.log(fullname(['45435']));

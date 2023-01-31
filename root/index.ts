@@ -389,9 +389,20 @@ let e1: INFO = {
 
 
 /* Episode 24 Generics */
-console.log('-------------------------------------------------');
 
 const arrayAny: any[] = ['str', 123, true]
 const arrayGen: Array<any> = ['str', 3435, false, { name: 'azim', lastname: 'karimi' }]
 console.log(arrayAny);
 console.log(arrayGen);
+
+
+
+/* Episode 25 Generics in functions */
+console.log('-------------------------------------------------');
+
+
+function fullname<T>(fn: T[]): T[] {
+    return fn
+}
+
+console.log(fullname(['45435']));
