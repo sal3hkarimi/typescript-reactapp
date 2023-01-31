@@ -440,11 +440,47 @@ console.log(pen);
 
 
 /* Episode 28 Keyof in Constraints */
-console.log('-------------------------------------------------');
 
 function library<N extends object, A extends keyof N>(book: N, key: A) {
     return book[key];
 }
 
-const quran = library({name: 'Quran', another: 'God'}, 'another')
+const quran = library({ name: 'Quran', another: 'God' }, 'another')
 console.log(quran);
+
+
+
+/* Episode 29 Generics in class */
+console.log('-------------------------------------------------');
+
+
+class Members<T> { // -> class Members<T extends string>
+    data: T[] = []
+    addUser(item: T) {
+        this.data.push(item)
+    }
+    removeUser(item: T) {
+        this.data.splice(this.data.indexOf(item), 1)
+    }
+    printMember() {
+        console.log(this.data);
+
+    }
+}
+
+const tb = new Members<string>()
+
+tb.addUser('Ali')
+tb.addUser('Vahid')
+tb.addUser('Hashem')
+tb.addUser('Kazem')
+tb.printMember()
+tb.removeUser('Ali')
+tb.printMember()
+
+const ageMember = new Members<number>()
+ageMember.addUser(12)
+ageMember.addUser(34)
+ageMember.addUser(56)
+ageMember.printMember()
+

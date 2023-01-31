@@ -277,9 +277,37 @@ function product(name, price) {
 const pen = product({ name: 'pen' }, 5454);
 console.log(pen);
 /* Episode 28 Keyof in Constraints */
-console.log('-------------------------------------------------');
 function library(book, key) {
     return book[key];
 }
 const quran = library({ name: 'Quran', another: 'God' }, 'another');
 console.log(quran);
+/* Episode 29 Generics in class */
+console.log('-------------------------------------------------');
+class Members {
+    constructor() {
+        this.data = [];
+    }
+    addUser(item) {
+        this.data.push(item);
+    }
+    removeUser(item) {
+        this.data.splice(this.data.indexOf(item), 1);
+    }
+    printMember() {
+        console.log(this.data);
+    }
+}
+const tb = new Members();
+tb.addUser('Ali');
+tb.addUser('Vahid');
+tb.addUser('Hashem');
+tb.addUser('Kazem');
+tb.printMember();
+tb.removeUser('Ali');
+tb.printMember();
+const ageMember = new Members();
+ageMember.addUser(12);
+ageMember.addUser(34);
+ageMember.addUser(56);
+ageMember.printMember();
