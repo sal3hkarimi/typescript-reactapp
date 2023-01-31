@@ -428,7 +428,7 @@ console.log(fl2);
 console.log(fl3);
 
 /* Episode 27 Constraints in Generics */
-console.log('-------------------------------------------------');
+
 
 function product<N extends object, P extends number | string>(name: N, price: P) {
     return Object.assign({}, name, price)
@@ -437,3 +437,14 @@ function product<N extends object, P extends number | string>(name: N, price: P)
 // <{ name: string }, number | string[]>
 const pen = product({ name: 'pen' }, 5454)
 console.log(pen);
+
+
+/* Episode 28 Keyof in Constraints */
+console.log('-------------------------------------------------');
+
+function library<N extends object, A extends keyof N>(book: N, key: A) {
+    return book[key];
+}
+
+const quran = library({name: 'Quran', another: 'God'}, 'another')
+console.log(quran);
