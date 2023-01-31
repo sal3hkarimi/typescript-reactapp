@@ -250,8 +250,23 @@ const arrayGen = ['str', 3435, false, { name: 'azim', lastname: 'karimi' }];
 console.log(arrayAny);
 console.log(arrayGen);
 /* Episode 25 Generics in functions */
-console.log('-------------------------------------------------');
-function fullname(fn) {
+function fun(fn) {
     return fn;
 }
-console.log(fullname(['45435']));
+console.log(fun(['45435']));
+/* Episode 26 Generics in functions 2 */
+console.log('-------------------------------------------------');
+// function fullname(fn: object, ln: object) {
+//     return Object.assign(fn, ln)
+// }
+// const fl = fullname({ name: 'Ahmad' }, { family: 'Qasemi' })
+// console.log(fl);
+function fullname(fn, ln) {
+    return Object.assign({}, fn, ln);
+}
+const fl = fullname({ name: 'Ahmad', fav: ['sport'] }, { family: 'Qasemi' });
+const fl2 = fullname({ fav: ['sport'] }, { family: 'Qasemi' });
+const fl3 = fullname({ name: 'Ahmad', fav: ['sport'] }, { family: 'Qasemi' });
+console.log(fl);
+console.log(fl2);
+console.log(fl3);

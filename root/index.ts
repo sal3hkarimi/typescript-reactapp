@@ -398,11 +398,33 @@ console.log(arrayGen);
 
 
 /* Episode 25 Generics in functions */
-console.log('-------------------------------------------------');
 
 
-function fullname<T>(fn: T[]): T[] {
+function fun<T>(fn: T[]): T[] {
     return fn
 }
 
-console.log(fullname<string>(['45435']));
+console.log(fun<string>(['45435']));
+
+
+
+/* Episode 26 Generics in functions 2 */
+console.log('-------------------------------------------------');
+
+
+// function fullname(fn: object, ln: object) {
+//     return Object.assign(fn, ln)
+// }
+// const fl = fullname({ name: 'Ahmad' }, { family: 'Qasemi' })
+// console.log(fl);
+
+function fullname<ST, STR2>(fn: ST, ln: STR2) {
+    return Object.assign({}, fn, ln)
+}
+const fl = fullname({ name: 'Ahmad', fav: ['sport'] }, { family: 'Qasemi' })
+const fl2 = fullname({ fav: ['sport'] }, { family: 'Qasemi' })
+const fl3 = fullname<{ name: string, fav: string[] }, { family: string }>({ name: 'Ahmad', fav: ['sport'] }, { family: 'Qasemi' })
+console.log(fl);
+console.log(fl2);
+console.log(fl3);
+
