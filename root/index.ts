@@ -451,7 +451,7 @@ console.log(quran);
 
 
 /* Episode 29 Generics in class */
-console.log('-------------------------------------------------');
+
 
 
 class Members<T> { // -> class Members<T extends string>
@@ -484,3 +484,19 @@ ageMember.addUser(34)
 ageMember.addUser(56)
 ageMember.printMember()
 
+
+
+/* Episode 30 Generics in Type and interface */
+console.log('-------------------------------------------------');
+
+// type FG = <T>(a: T, b: T) => T
+interface FG<T> {
+    (a: T, b: T): T
+}
+
+let fu: FG<number> = function (a: number, b: number) {
+    console.log(a + b);
+
+}
+
+fu(12, 23)

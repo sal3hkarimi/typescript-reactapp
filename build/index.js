@@ -283,7 +283,6 @@ function library(book, key) {
 const quran = library({ name: 'Quran', another: 'God' }, 'another');
 console.log(quran);
 /* Episode 29 Generics in class */
-console.log('-------------------------------------------------');
 class Members {
     constructor() {
         this.data = [];
@@ -311,3 +310,9 @@ ageMember.addUser(12);
 ageMember.addUser(34);
 ageMember.addUser(56);
 ageMember.printMember();
+/* Episode 30 Generics in Type and interface */
+console.log('-------------------------------------------------');
+let fu = function (a, b) {
+    console.log(a + b);
+};
+fu(12, 23);
