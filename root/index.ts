@@ -487,7 +487,7 @@ ageMember.printMember()
 
 
 /* Episode 30 Generics in Type and interface */
-console.log('-------------------------------------------------');
+
 
 // type FG = <T>(a: T, b: T) => T
 interface FG<T> {
@@ -500,3 +500,31 @@ let fu: FG<number> = function (a: number, b: number) {
 }
 
 fu(12, 23)
+
+
+/* Episode 31 decorators in class */
+console.log('-------------------------------------------------');
+
+function CarName<T extends { new(...args: any[]): {} }>(constructor: T) {
+    console.log(constructor);    
+    return class extends constructor {
+        name = '206'
+    }
+}
+
+@CarName
+class Car {
+    model: string;
+    constructor(param: string) {
+        this.model = param
+    }
+    print() {
+        console.log(`my car is: ${this.model}`);
+
+    }
+}
+
+const perid = new Car('Perid')
+console.log(perid);
+
+perid.print()
