@@ -346,7 +346,6 @@ const perid = new Car('Perid');
 console.log(perid);
 perid.print();
 /* Episode 32 multi decorators */
-console.log('-------------------------------------------------');
 function SmartPhone(constructor) {
     console.log(constructor);
     return class extends constructor {
@@ -381,7 +380,6 @@ const iphone = new Mobile('iphone');
 console.log(iphone);
 iphone.print();
 /* Episode 33 decorators factories */
-console.log('-------------------------------------------------');
 function users(name) {
     return function (constructor) {
         console.log(name);
@@ -398,3 +396,26 @@ Student = __decorate([
 ], Student);
 const vahid = new Student();
 console.log(users);
+/* Episode 34 decorators method */
+console.log('-------------------------------------------------');
+function print(str) {
+    return function (target, propertyKey, descriptor) {
+        console.log(target);
+        console.log(propertyKey);
+        descriptor.writable = false;
+    };
+}
+class Article {
+    constructor(title) {
+        this.title = title;
+    }
+    getArticle() {
+        return this.title;
+    }
+}
+__decorate([
+    print('article')
+], Article.prototype, "getArticle", null);
+const newArticle = new Article('Typescript');
+// newArticle.getArticle = ()=>'js'
+// console.log(newArticle.getArticle());

@@ -532,7 +532,6 @@ perid.print()
 
 
 /* Episode 32 multi decorators */
-console.log('-------------------------------------------------');
 
 
 function SmartPhone<T extends { new(...args: any[]): {} }>(constructor: T) {
@@ -568,12 +567,12 @@ console.log(iphone);
 iphone.print()
 
 /* Episode 33 decorators factories */
-console.log('-------------------------------------------------');
+
 
 function users(name: String) {
     return function (constructor: Function) {
         console.log(name);
-        
+
     }
 }
 @users('Mousa')
@@ -587,3 +586,34 @@ class Student {
 
 const vahid = new Student()
 console.log(users);
+
+
+
+/* Episode 34 decorators method */
+console.log('-------------------------------------------------');
+
+function print(str: string) {
+    return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+        console.log(target);
+        console.log(propertyKey);
+        
+        descriptor.writable = false
+    }
+}
+
+
+class Article {
+    title: string
+    constructor(title: string) {
+        this.title = title
+    }
+
+    @print('article')
+    getArticle(){
+        return this.title
+    }
+}
+
+const newArticle = new Article('Typescript')
+// newArticle.getArticle = ()=>'js'
+// console.log(newArticle.getArticle());
