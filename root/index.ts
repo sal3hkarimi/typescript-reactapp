@@ -590,13 +590,13 @@ console.log(users);
 
 
 /* Episode 34 decorators method */
-console.log('-------------------------------------------------');
+
 
 function print(str: string) {
     return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
         console.log(target);
         console.log(propertyKey);
-        
+
         descriptor.writable = false
     }
 }
@@ -609,7 +609,7 @@ class Article {
     }
 
     @print('article')
-    getArticle(){
+    getArticle() {
         return this.title
     }
 }
@@ -617,3 +617,54 @@ class Article {
 const newArticle = new Article('Typescript')
 // newArticle.getArticle = ()=>'js'
 // console.log(newArticle.getArticle());
+
+
+/* Episode 35 parameter and property decorators */
+
+// property
+function blog(title: string) {
+    return function (target: any, propertyKey: string | symbol) {
+        console.log(target);
+        console.log(propertyKey);
+    }
+}
+
+class SubjectBlog {
+    @blog('AI')
+    title: string
+    constructor(title: string) {
+        this.title = title
+    }
+    
+    printInfo() {
+        return this.title
+    }
+}
+
+const technology = new SubjectBlog('ChatGPT')
+console.log(technology.printInfo());
+
+console.log('-------------------------------------------------');
+// parameter
+function blogSite(target: Object, methodKey: string | symbol, parameterIndex:number) {
+    console.log(target);
+    console.log(methodKey);
+    console.log(parameterIndex);
+        
+}
+
+class SubjectBlogSite {
+    
+    title: string
+    constructor(title: string) {
+        this.title = title
+    }
+
+    printInfo(@blogSite description: string) {
+        return this.title
+    }
+}
+
+const updatePhone = new SubjectBlog('iphone 14')
+console.log(updatePhone.printInfo('ali'));
+

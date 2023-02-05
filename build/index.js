@@ -5,6 +5,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 // Types
 let num;
 num = 123;
@@ -397,7 +400,6 @@ Student = __decorate([
 const vahid = new Student();
 console.log(users);
 /* Episode 34 decorators method */
-console.log('-------------------------------------------------');
 function print(str) {
     return function (target, propertyKey, descriptor) {
         console.log(target);
@@ -419,3 +421,44 @@ __decorate([
 const newArticle = new Article('Typescript');
 // newArticle.getArticle = ()=>'js'
 // console.log(newArticle.getArticle());
+/* Episode 35 parameter and property decorators */
+// property
+function blog(title) {
+    return function (target, propertyKey) {
+        console.log(target);
+        console.log(propertyKey);
+    };
+}
+class SubjectBlog {
+    constructor(title) {
+        this.title = title;
+    }
+    printInfo() {
+        return this.title;
+    }
+}
+__decorate([
+    blog('AI')
+], SubjectBlog.prototype, "title", void 0);
+const technology = new SubjectBlog('ChatGPT');
+console.log(technology.printInfo());
+console.log('-------------------------------------------------');
+// parameter
+function blogSite(target, methodKey, parameterIndex) {
+    console.log(target);
+    console.log(methodKey);
+    console.log(parameterIndex);
+}
+class SubjectBlogSite {
+    constructor(title) {
+        this.title = title;
+    }
+    printInfo(description) {
+        return this.title;
+    }
+}
+__decorate([
+    __param(0, blogSite)
+], SubjectBlogSite.prototype, "printInfo", null);
+const updatePhone = new SubjectBlog('iphone 14');
+console.log(updatePhone.printInfo('ali'));
