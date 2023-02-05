@@ -545,12 +545,12 @@ function SmartPhone<T extends { new(...args: any[]): {} }>(constructor: T) {
 function Laptop<T extends { new(...args: any[]): {} }>(constructor: T) {
     console.log(constructor);
     return class extends constructor {
-        name = 'hp'
+        nameLaptop = 'hp'
     }
 }
 
-@SmartPhone
 @Laptop
+@SmartPhone
 class Mobile {
     model: string;
     constructor(param: string) {

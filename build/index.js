@@ -361,7 +361,7 @@ function Laptop(constructor) {
     return class extends constructor {
         constructor() {
             super(...arguments);
-            this.name = 'hp';
+            this.nameLaptop = 'hp';
         }
     };
 }
@@ -374,8 +374,8 @@ let Mobile = class Mobile {
     }
 };
 Mobile = __decorate([
-    SmartPhone,
-    Laptop
+    Laptop,
+    SmartPhone
 ], Mobile);
 const iphone = new Mobile('iphone');
 console.log(iphone);
