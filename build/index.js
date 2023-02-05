@@ -316,12 +316,12 @@ ageMember.addUser(12);
 ageMember.addUser(34);
 ageMember.addUser(56);
 ageMember.printMember();
-let fu = function (a, b) {
-    console.log(a + b);
+let FUNG = function (a, b) {
+    const result = a + b;
+    return result;
 };
-fu(12, 23);
+FUNG(12, 23);
 /* Episode 31 decorators in class */
-console.log('-------------------------------------------------');
 function CarName(constructor) {
     console.log(constructor);
     return class extends constructor {
@@ -345,3 +345,38 @@ Car = __decorate([
 const perid = new Car('Perid');
 console.log(perid);
 perid.print();
+/* Episode 32 multi decorators */
+console.log('-------------------------------------------------');
+function SmartPhone(constructor) {
+    console.log(constructor);
+    return class extends constructor {
+        constructor() {
+            super(...arguments);
+            this.name = 'samsung';
+        }
+    };
+}
+function Laptop(constructor) {
+    console.log(constructor);
+    return class extends constructor {
+        constructor() {
+            super(...arguments);
+            this.name = 'hp';
+        }
+    };
+}
+let Mobile = class Mobile {
+    constructor(param) {
+        this.model = param;
+    }
+    print() {
+        console.log(`my phone is: ${this.model}`);
+    }
+};
+Mobile = __decorate([
+    SmartPhone,
+    Laptop
+], Mobile);
+const iphone = new Mobile('iphone');
+console.log(iphone);
+iphone.print();

@@ -494,19 +494,19 @@ interface FG<T> {
     (a: T, b: T): T
 }
 
-let fu: FG<number> = function (a: number, b: number) {
-    console.log(a + b);
-
+let FUNG: FG<number> = function (a: number, b: number) {
+    const result = a + b
+    return result
 }
 
-fu(12, 23)
+FUNG(12, 23)
 
 
 /* Episode 31 decorators in class */
-console.log('-------------------------------------------------');
+
 
 function CarName<T extends { new(...args: any[]): {} }>(constructor: T) {
-    console.log(constructor);    
+    console.log(constructor);
     return class extends constructor {
         name = '206'
     }
@@ -528,3 +528,41 @@ const perid = new Car('Perid')
 console.log(perid);
 
 perid.print()
+
+
+
+/* Episode 32 multi decorators */
+console.log('-------------------------------------------------');
+
+
+function SmartPhone<T extends { new(...args: any[]): {} }>(constructor: T) {
+    console.log(constructor);
+    return class extends constructor {
+        name = 'samsung'
+    }
+}
+
+function Laptop<T extends { new(...args: any[]): {} }>(constructor: T) {
+    console.log(constructor);
+    return class extends constructor {
+        name = 'hp'
+    }
+}
+
+@SmartPhone
+@Laptop
+class Mobile {
+    model: string;
+    constructor(param: string) {
+        this.model = param
+    }
+    print() {
+        console.log(`my phone is: ${this.model}`);
+
+    }
+}
+
+const iphone = new Mobile('iphone')
+console.log(iphone);
+
+iphone.print()
