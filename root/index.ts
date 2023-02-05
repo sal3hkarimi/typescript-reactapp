@@ -566,3 +566,24 @@ const iphone = new Mobile('iphone')
 console.log(iphone);
 
 iphone.print()
+
+/* Episode 33 decorators factories */
+console.log('-------------------------------------------------');
+
+function users(name: String) {
+    return function (constructor: Function) {
+        console.log(name);
+        
+    }
+}
+@users('Mousa')
+class Student {
+    name = 'Ali'
+    constructor() {
+        console.log(`my name is ${this.name}`);
+    }
+}
+
+
+const vahid = new Student()
+console.log(users);
