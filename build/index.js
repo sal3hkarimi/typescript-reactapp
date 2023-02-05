@@ -380,3 +380,21 @@ Mobile = __decorate([
 const iphone = new Mobile('iphone');
 console.log(iphone);
 iphone.print();
+/* Episode 33 decorators factories */
+console.log('-------------------------------------------------');
+function users(name) {
+    return function (constructor) {
+        console.log(name);
+    };
+}
+let Student = class Student {
+    constructor() {
+        this.name = 'Ali';
+        console.log(`my name is ${this.name}`);
+    }
+};
+Student = __decorate([
+    users('Mousa')
+], Student);
+const vahid = new Student();
+console.log(users);
