@@ -667,7 +667,6 @@ class SubjectBlogSite {
 const updatePhone = new SubjectBlog('iphone 14')
 // console.log(updatePhone.printInfo('ali'));
 
-console.log('-------------------------------------------------');
 /* Episode 36 namespace */
 
 /// <reference path="NameSpace.ts"/>
@@ -679,3 +678,11 @@ namespace Lable {
 
 // console.log(newLable.title);
 
+console.log('-------------------------------------------------');
+/* Episode 37 Modules */
+
+import {Modules} from './Modules'
+
+
+const artc = new Modules()
+console.log(artc.title);
