@@ -635,7 +635,7 @@ class SubjectBlog {
     constructor(title: string) {
         this.title = title
     }
-    
+
     printInfo() {
         return this.title
     }
@@ -644,17 +644,16 @@ class SubjectBlog {
 const technology = new SubjectBlog('ChatGPT')
 console.log(technology.printInfo());
 
-console.log('-------------------------------------------------');
 // parameter
-function blogSite(target: Object, methodKey: string | symbol, parameterIndex:number) {
+function blogSite(target: Object, methodKey: string | symbol, parameterIndex: number) {
     console.log(target);
     console.log(methodKey);
     console.log(parameterIndex);
-        
+
 }
 
 class SubjectBlogSite {
-    
+
     title: string
     constructor(title: string) {
         this.title = title
@@ -666,5 +665,11 @@ class SubjectBlogSite {
 }
 
 const updatePhone = new SubjectBlog('iphone 14')
-console.log(updatePhone.printInfo('ali'));
+// console.log(updatePhone.printInfo('ali'));
 
+console.log('-------------------------------------------------');
+/* Episode 36 namespace */
+
+/// <reference path="NameSpace.ts"/>
+const newLable = new Lable.Pre()
+// console.log(newLable.title);

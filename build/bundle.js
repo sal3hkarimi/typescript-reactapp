@@ -8,6 +8,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var Lable;
+(function (Lable) {
+    class Pre {
+        constructor() {
+            this.title = 'TypeScript';
+            console.log(this.title);
+        }
+    }
+    Lable.Pre = Pre;
+})(Lable || (Lable = {}));
+const btn = document.querySelector('button');
+btn.addEventListener('click', (event) => {
+    console.log('click');
+});
 // Types
 let num;
 num = 123;
@@ -463,5 +477,6 @@ const updatePhone = new SubjectBlog('iphone 14');
 // console.log(updatePhone.printInfo('ali'));
 console.log('-------------------------------------------------');
 /* Episode 36 namespace */
+/// <reference path="NameSpace.ts"/>
 const newLable = new Lable.Pre();
 // console.log(newLable.title);
