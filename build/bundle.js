@@ -17,6 +17,7 @@ var Lable;
         }
     }
     Lable.Pre = Pre;
+    // export const newLable = new Pre()
 })(Lable || (Lable = {}));
 const btn = document.querySelector('button');
 btn.addEventListener('click', (event) => {
@@ -478,5 +479,11 @@ const updatePhone = new SubjectBlog('iphone 14');
 console.log('-------------------------------------------------');
 /* Episode 36 namespace */
 /// <reference path="NameSpace.ts"/>
-const newLable = new Lable.Pre();
+var Lable;
+/* Episode 36 namespace */
+/// <reference path="NameSpace.ts"/>
+(function (Lable) {
+    const newLable = new Lable.Pre();
+    console.log(newLable.title);
+})(Lable || (Lable = {}));
 // console.log(newLable.title);

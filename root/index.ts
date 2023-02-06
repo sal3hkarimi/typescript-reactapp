@@ -671,5 +671,11 @@ console.log('-------------------------------------------------');
 /* Episode 36 namespace */
 
 /// <reference path="NameSpace.ts"/>
-const newLable = new Lable.Pre()
+
+namespace Lable {
+    const newLable = new Pre();
+    console.log(newLable.title);
+}
+
 // console.log(newLable.title);
+
